@@ -6,9 +6,9 @@ int main(int argc, char const *argv[])
     system("cls");
     if(introScene()) 
     {
-        system("cls");
+        //system("cls");
         Player* player = setupPlayer();
-        system("cls");
+        //system("cls");
         player->Attack();
         delete player;
         
