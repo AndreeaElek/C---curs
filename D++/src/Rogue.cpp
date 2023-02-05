@@ -3,6 +3,8 @@
 Rogue::Rogue(std::string name)
 {
     this->name = name;
+    setHealth(60);
+    setDamage(30);
 }
 
 Rogue::Rogue()

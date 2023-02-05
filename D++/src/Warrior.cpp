@@ -3,6 +3,8 @@
 Warrior::Warrior(std::string name)
 {
     this->name = name;
+    setHealth(50);
+    setDamage(70);
 }
 
 Warrior::Warrior()
