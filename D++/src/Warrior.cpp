@@ -1,8 +1,7 @@
 #include "Warrior.h"
 
-Warrior::Warrior(std::string name)
+Warrior::Warrior(std::string name):Player(name)
 {
-    this->name = name;
     setHealth(50);
     setDamage(70);
 }

@@ -1,8 +1,7 @@
 #include "Rogue.h"
 
-Rogue::Rogue(std::string name)
+Rogue::Rogue(std::string name):Player(name)
 {
-    this->name = name;
     setHealth(60);
     setDamage(30);
 }

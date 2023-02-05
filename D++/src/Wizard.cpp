@@ -1,8 +1,7 @@
 #include "Wizard.h"
 
-Wizard::Wizard(std::string name)
+Wizard::Wizard(std::string name):Player(name)
 {
-    this->name = name;
     setHealth(40);
     setDamage(80);
 }
