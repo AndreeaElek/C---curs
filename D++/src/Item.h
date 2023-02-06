@@ -13,7 +13,7 @@ public:
     ~Item();
 
 private:
-    int attackPower, magicPower, deference;
+    int attackPower, magicPower, defence;
     std::string itemType;
 
 };

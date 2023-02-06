@@ -4,6 +4,7 @@ Rogue::Rogue(std::string name):Player(name)
 {
     setHealth(60);
     setDamage(30);
+    this->playerType = PlayerType::Rogue;
 }
 
 Rogue::Rogue()

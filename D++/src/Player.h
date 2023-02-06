@@ -7,9 +7,17 @@
 #include <vector>
 #include "Item.h"
 
+enum class PlayerType 
+{
+    Wizard,
+    Warrior,
+    Rogue
+};
+
 class Player
 {
 public:
+    PlayerType playerType;
     Player(std::string name);
     Player();
     ~Player();
@@ -38,6 +46,7 @@ protected:
 private:
     int health, damage;
     std::vector <Item*> inventory;
+    
 
     
 

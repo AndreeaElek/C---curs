@@ -4,6 +4,7 @@ Warrior::Warrior(std::string name):Player(name)
 {
     setHealth(50);
     setDamage(70);
+    this->playerType = PlayerType::Warrior;
 }
 
 Warrior::Warrior()

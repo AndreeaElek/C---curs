@@ -70,20 +70,17 @@ Player* setupPlayer()
     system("cls");
     if(heroType == "Wizard")
     {
-        Wizard* wizard = new Wizard(playerName);
-        Player* player = wizard;
+        Player* player = new Wizard(playerName);
         return player;
     }
     else if(heroType == "Warrior")
     {
-        Warrior* warrior = new Warrior(playerName);
-        Player* player = warrior;
+        Player* player = new Warrior(playerName);
         return player;
     }
     else 
     {
-        Rogue* rogue = new Rogue(playerName);
-        Player* player = rogue;
+        Player* player = new Rogue(playerName);
         return player;
     }
     

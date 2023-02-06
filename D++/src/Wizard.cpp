@@ -4,6 +4,7 @@ Wizard::Wizard(std::string name):Player(name)
 {
     setHealth(40);
     setDamage(80);
+    this->playerType = PlayerType::Wizard;
 }
 
 Wizard::Wizard()
