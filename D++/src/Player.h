@@ -37,7 +37,7 @@ protected:
 
 private:
     int health, damage;
-    std::vector <Item> inventory;
+    std::vector <Item*> inventory;
 
     
 
