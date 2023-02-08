@@ -2,6 +2,10 @@
 
 bool introScene()
 {
+    /*sf::Music music1;
+    music1.openFromFile("Main_Menu.wav");
+    music1.setVolume(40);
+    music1.play();*/
     bool validAnswer = false, answerValue;
     int answer;
     std::cout<<"This is the intro text for the game" << std::endl;
@@ -28,7 +32,43 @@ bool introScene()
             std::cout<<"Wrong input. Please pick a valid option" << std::endl;
         }
     }
+    //music1.stop();
+    return answerValue;
+}
+
+bool restartGame()
+{
+    /*sf::Music music1;
+    music1.openFromFile("Main_Menu.wav");
+    music1.setVolume(40);
+    music1.play();*/
+    bool validAnswer = false, answerValue;
+    int answer;
     
+    while(validAnswer==false)
+    {
+        std::cout<<"Do you want to restrart the game?" << std::endl 
+                    << "1.Yes" << std::endl 
+                    << "2. No" << std::endl;
+        std::cin>>answer;
+        
+        system("cls");
+        if(answer == 1)
+        {
+            answerValue =true;
+            validAnswer = true;
+        }
+        else if(answer == 2)
+        {
+            answerValue = false;
+            validAnswer = true;
+        }
+        else
+        {
+            std::cout<<"Wrong input. Please pick a valid option" << std::endl;
+        }
+    }
+    //music1.stop();
     return answerValue;
 }
 
