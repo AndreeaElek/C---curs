@@ -129,7 +129,7 @@ void roadsScene()
 bool chestScene()
 {
     int chestAnswerValue;
-    bool validAnswer = false, wantsToPlay;
+    bool validAnswer = false, openChest;
     while(validAnswer==false)
     { 
         std::cout << "On the road, you find a chest. Do you open it?" << std::endl
@@ -141,18 +141,22 @@ bool chestScene()
             case 1: 
             {
                 validAnswer=true;
-                wantsToPlay = true;
+                openChest = true;
                 break;
             }
             case 2: 
             {
                 validAnswer=true;
-                wantsToPlay = false;
+                openChest = false;
                 break;
             }
         }
+        system("cls");
+        if(openChest==false)
+        {
+            std::cout<<"Wrong input. Please pick a valid option." << std::endl;
+        }
     }
-    system("cls");
-    return wantsToPlay;
+    return openChest;
 }
 

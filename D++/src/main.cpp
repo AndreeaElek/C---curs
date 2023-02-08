@@ -8,7 +8,7 @@ int main(int argc, char const *argv[])
     {
         Player* player = setupPlayer();
         roadsScene();
-        if(chestScene)
+        if(chestScene())
         {
             player->CreateChestItem();
         }
