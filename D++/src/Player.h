@@ -20,10 +20,11 @@ public:
     PlayerType playerType;
     Player(std::string name);
     Player();
-    ~Player();
+    virtual ~Player();
     virtual void Attack();
     void CheckInventory();
     void CreateChestItem();
+    void DeleteItems();
     void setHealth(int health)
     {
         this->health = health;

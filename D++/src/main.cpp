@@ -28,6 +28,7 @@ int main(int argc, char const *argv[])
             player->CheckInventory();
             //player->Attack();
 
+            player->DeleteItems();
             delete player;
             music2.stop();
             music1.play();

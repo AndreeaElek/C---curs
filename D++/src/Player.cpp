@@ -65,4 +65,17 @@ void Player::CreateChestItem()
     }
 }
 
+void Player::DeleteItems()
+{
+    if(!(inventory.empty()))
+    {
+        for(auto& item : inventory)
+        {
+            delete item;
+        }
+        std::cout<< std::endl;
+    }
+    inventory.clear();
+}
+
 
