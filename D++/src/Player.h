@@ -23,6 +23,7 @@ public:
     ~Player();
     virtual void Attack();
     void CheckInventory();
+    void CreateChestItem(Player* p);
     void setHealth(int health)
     {
         this->health = health;
