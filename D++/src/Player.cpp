@@ -73,7 +73,6 @@ void Player::DeleteItems()
         {
             delete item;
         }
-        std::cout<< std::endl;
     }
     inventory.clear();
 }
