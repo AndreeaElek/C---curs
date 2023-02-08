@@ -10,12 +10,16 @@ class Item
 {
 public:
     Item();
-    Item(std::string ItemType, int attackPower, int magicPower, int defencePower);
+    Item(std::string ItemName, std::string ItemType, int attackPower, int magicPower, int defencePower);
     ~Item();
+    std::string getItemName()
+    {
+        return itemName;
+    }
 
 private:
     int attackPower, magicPower, defencePower;
-    std::string itemType;
+    std::string itemName, itemType;
 
 };
 

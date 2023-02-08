@@ -7,11 +7,13 @@ int main(int argc, char const *argv[])
     if(introScene()) 
     {
         Player* player = setupPlayer();
+        player->CheckInventory();
         roadsScene();
         if(chestScene())
         {
             player->CreateChestItem();
         }
+        player->CheckInventory();
         //player->Attack();
 
         delete player;
