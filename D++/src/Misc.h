@@ -10,3 +10,6 @@
 bool introScene(); 
 
 Player* setupPlayer();
+
+void roadsScene();
+bool chestScene();

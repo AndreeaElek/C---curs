@@ -86,3 +86,73 @@ Player* setupPlayer()
     
 }
 
+void roadsScene()
+{
+    std::string roadChosen;
+    int roadChosenValue;
+
+    std::cout<<"You arrived at a crossroads. Where do you want to go?" << std::endl 
+                << "1. To the village" << std::endl 
+                << "2. To the forest" << std::endl
+                << "3. To the caves" << std::endl;
+    std::cin>>roadChosenValue;
+    switch (roadChosenValue)
+    {
+        case 1: 
+        {
+            roadChosen = "village";
+            break;
+        }
+        case 2: 
+        {
+            roadChosen = "forest";
+            break;
+        }
+        case 3:  
+        {
+            roadChosen = "caves";
+            break;
+        }
+        default:
+            roadChosen = "Wrong Input";
+            break;
+    }
+    system("cls");
+    if(!(roadChosen == "village" || roadChosen == "forest" || roadChosen == "caves"))
+    {
+        std::cout<<"Wrong input. Please pick a valid option." << std::endl;
+        roadsScene();
+    }
+}
+
+
+bool chestScene()
+{
+    int chestAnswerValue;
+    bool validAnswer = false, wantsToPlay;
+    while(validAnswer==false)
+    { 
+        std::cout << "On the road, you find a chest. Do you open it?" << std::endl
+                    << "1. Yes" << std::endl 
+                    << "2. No" << std::endl;
+        std::cin>>chestAnswerValue;
+        switch (chestAnswerValue)
+        {
+            case 1: 
+            {
+                validAnswer=true;
+                wantsToPlay = true;
+                break;
+            }
+            case 2: 
+            {
+                validAnswer=true;
+                wantsToPlay = false;
+                break;
+            }
+        }
+    }
+    system("cls");
+    return wantsToPlay;
+}
+

@@ -6,10 +6,14 @@ int main(int argc, char const *argv[])
     system("cls");
     if(introScene()) 
     {
-        //system("cls");
         Player* player = setupPlayer();
-        //system("cls");
-        player->Attack();
+        roadsScene();
+        if(chestScene)
+        {
+            player->CreateChestItem();
+        }
+        //player->Attack();
+
         delete player;
         
     }
