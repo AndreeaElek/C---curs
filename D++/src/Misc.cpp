@@ -2,68 +2,85 @@
 
 bool introScene()
 {
-    //bool play = false;
+    bool validAnswer = false, answerValue;
     int answer;
     std::cout<<"This is the intro text for the game" << std::endl;
-    std::cout<<"Do you want to play?" << std::endl 
-                << "1.Yes" << std::endl 
-                << "2.No" << std::endl;
-    std::cin>>answer;
-    system("cls");
-    if(answer == 1)
+    while(validAnswer==false)
     {
-        return true;
+        std::cout<<"Do you want to play?" << std::endl 
+                    << "1.Yes" << std::endl 
+                    << "2.No" << std::endl;
+        std::cin>>answer;
+        
+        system("cls");
+        if(answer == 1)
+        {
+            answerValue =true;
+            validAnswer = true;
+        }
+        else if(answer == 2)
+        {
+            answerValue = false;
+            validAnswer = true;
+        }
+        else
+        {
+            std::cout<<"Wrong input. Please pick a valid option" << std::endl;
+        }
     }
-    else if(answer == 2)
-    {
-        return false;
-    }
-    else
-    {
-        std::cout<<"Wrong input" << std::endl;
-        exit(0);
-    }
+    
+    return answerValue;
 }
 
 Player* setupPlayer()
 {
     std::string playerName, heroType;
+    bool validHero = false;
     int heroTypeValue;
     std::cout<<"What is you name?"<<std::endl;
     std::cin.ignore();
     std::getline(std::cin, playerName);
-    std::cout<<"What do you want to be?" << std::endl 
-                << "1. Wizard" << std::endl 
-                << "2. Warrior" << std::endl
-                << "3. Rogue" << std::endl;
-    std::cin>>heroTypeValue;
-    switch (heroTypeValue)
+    while(validHero==false)
     {
-        case 1: 
+        std::cout<<"What do you want to be?" << std::endl 
+                    << "1. Wizard" << std::endl 
+                    << "2. Warrior" << std::endl
+                    << "3. Rogue" << std::endl;
+        std::cin>>heroTypeValue;
+        
+        switch (heroTypeValue)
         {
-            heroType = "Wizard";
-            break;
+            case 1: 
+            {
+                heroType = "Wizard";
+                validHero = true;
+                break;
+            }
+            case 2: 
+            {
+                heroType = "Warrior";
+                validHero = true;
+                break;
+            }
+            case 3:  
+            {
+                validHero = true;
+                heroType = "Rogue";
+                break;
+            }
+            default:
+                //heroType = "Wrong Input";
+                system("cls");
+                std::cout<<"Wrong input. Please pick a valid option" << std::endl;
+                break;
         }
-        case 2: 
-        {
-            heroType = "Warrior";
-            break;
-        }
-        case 3:  
-        {
-            heroType = "Rogue";
-            break;
-        }
-        default:
-            heroType = "Wrong Input";
-            break;
     }
     system("cls");
-    if(!(heroType == "Wizard" || heroType == "Warrior" || heroType == "Rogue"))
-    {
-        std::cout<<"Wrong input" << std::endl;
-        exit(1);
-    }
+    //if(!(heroType == "Wizard" || heroType == "Warrior" || heroType == "Rogue"))
+    //{
+    //    std::cout<<"Wrong input. Please pick a valid option" << std::endl;
+   //     setupPlayer();
+    //}
     std::cout<<"Welcome " << heroType << " " << playerName << std::endl; 
     std::cout << "Press any key to continue..." << std::endl;
     _getch();
@@ -152,7 +169,7 @@ bool chestScene()
             }
         }
         system("cls");
-        if(openChest==false)
+        if(validAnswer==false)
         {
             std::cout<<"Wrong input. Please pick a valid option." << std::endl;
         }

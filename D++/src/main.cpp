@@ -7,7 +7,6 @@ int main(int argc, char const *argv[])
     if(introScene()) 
     {
         Player* player = setupPlayer();
-        player->CheckInventory();
         roadsScene();
         if(chestScene())
         {
