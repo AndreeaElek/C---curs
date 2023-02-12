@@ -53,6 +53,7 @@ int main(int argc, char const *argv[])
         }
         std::cout<< "Game Over" << std::endl;
         restart=restartGame();
+        system("cls");
     }
     
     return 0; 
