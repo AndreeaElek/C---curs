@@ -25,6 +25,8 @@ public:
     void CheckInventory();
     void CreateChestItem();
     int getItemsAttackPower();
+    int getItemsDefencePower();
+    int getItemsMagicPower();
     void DeleteItems();
     void setHealth(int health)
     {

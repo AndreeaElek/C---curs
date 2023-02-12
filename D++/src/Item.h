@@ -20,6 +20,18 @@ public:
     {
         return this->attackPower;
     }
+    int getDefencePower()
+    {
+        return this->defencePower;
+    }
+    int getMagicPower()
+    {
+        return this->magicPower;
+    }
+    std::string getItemType()
+    {
+        return this->itemType;
+    }
 
 private:
     int attackPower, magicPower, defencePower;

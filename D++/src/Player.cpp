@@ -44,21 +44,21 @@ void Player::CreateChestItem()
     {
         case PlayerType::Wizard:
         {
-            Item* wand = new Item("Wand", "attack",10,15,5);
+            Item* wand = new Item("Wand", "attack",5,15,0);
             this->inventory.push_back(wand);
             std::cout<<"Wand added to inventory \n";
             break;
         }
         case PlayerType::Warrior:
         {
-            Item* shield = new Item("Shield","defence",5,5,15);
+            Item* shield = new Item("Shield","defence",0,0,15);
             this->inventory.push_back(shield);
             std::cout<<"Shield added to inventory \n";
             break;
         }
         case PlayerType::Rogue:
         {
-            Item* knife = new Item("Knife", "attack",15,5,10);
+            Item* knife = new Item("Knife", "attack",15,0,0);
             this->inventory.push_back(knife);
             std::cout<<"Knife added to inventory \n";
             break;
@@ -73,10 +73,45 @@ int Player::getItemsAttackPower()
     {
         for(auto& item : inventory)
         {
-            totalItemsDamage += item->getAttackPower();
+            if(item->getItemType() == "attack")
+            {
+                totalItemsDamage += item->getAttackPower();
+            }
         }
     }
     return totalItemsDamage;
+}
+
+int Player::getItemsDefencePower()
+{
+    int totalItemsDefence=0;
+    if(!(inventory.empty()))
+    {
+        for(auto& item : inventory)
+        {
+            if(item->getItemType() == "defence")
+            {
+                totalItemsDefence += item->getDefencePower();
+            }
+        }
+    }
+    return totalItemsDefence;    
+}
+
+int Player::getItemsMagicPower()
+{
+    int totalItemsMagic=0;
+    if(!(inventory.empty()))
+    {
+        for(auto& item : inventory)
+        {
+            if(item->getItemType() == "magic")
+            {
+                totalItemsMagic += item->getMagicPower();
+            }
+        }
+    }
+    return totalItemsMagic;
 }
 
 void Player::DeleteItems()

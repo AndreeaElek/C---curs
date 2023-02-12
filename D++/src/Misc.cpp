@@ -109,18 +109,12 @@ Player* setupPlayer()
                 break;
             }
             default:
-                //heroType = "Wrong Input";
                 system("cls");
                 std::cout<<"Wrong input. Please pick a valid option" << std::endl;
                 break;
         }
     }
     system("cls");
-    //if(!(heroType == "Wizard" || heroType == "Warrior" || heroType == "Rogue"))
-    //{
-    //    std::cout<<"Wrong input. Please pick a valid option" << std::endl;
-   //     setupPlayer();
-    //}
     std::cout<<"Welcome " << heroType << " " << playerName << std::endl; 
     std::cout << "Press any key to continue..." << std::endl;
     _getch();
@@ -269,7 +263,7 @@ bool battleScene(Player* player, Enemy* enemy)
                 return true;
             }
 
-            player->setHealth( player->getHealth() - enemy->getDamage() );
+            player->setHealth( player->getHealth() - (enemy->getDamage() - player->getItemsDefencePower()) );
             if(player->getHealth() <= 0)
             {
                 return false;
@@ -282,7 +276,7 @@ bool battleScene(Player* player, Enemy* enemy)
         std::cout << "Enemy attacks first \n";
         do 
         {
-            player->setHealth( player->getHealth() - enemy->getDamage() );
+            player->setHealth( player->getHealth() - (enemy->getDamage() - player->getItemsDefencePower()) );
             if(player->getHealth() <= 0)
             {
                 return false;
