@@ -12,8 +12,8 @@ bool introScene()
     while(validAnswer==false)
     {
         std::cout<<"Do you want to play?" << std::endl 
-                    << "1.Yes" << std::endl 
-                    << "2.No" << std::endl;
+                    << "1. Yes" << std::endl 
+                    << "2. No" << std::endl;
         std::cin>>answer;
         
         system("cls");
@@ -48,7 +48,7 @@ bool restartGame()
     while(validAnswer==false)
     {
         std::cout<<"Do you want to restrart the game?" << std::endl 
-                    << "1.Yes" << std::endl 
+                    << "1. Yes" << std::endl 
                     << "2. No" << std::endl;
         std::cin>>answer;
         
@@ -260,6 +260,7 @@ bool battleScene(Player* player, Enemy* enemy)
 {
     if(generateFirstAttacker() == "Player")
     {
+        std::cout << "Player attacks first \n";
         do 
         {
             enemy->setHP( enemy->getHP() - player->Attack() );
@@ -278,6 +279,7 @@ bool battleScene(Player* player, Enemy* enemy)
     }
     else
     {
+        std::cout << "Enemy attacks first \n";
         do 
         {
             player->setHealth( player->getHealth() - enemy->getDamage() );
