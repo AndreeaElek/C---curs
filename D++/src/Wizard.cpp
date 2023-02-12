@@ -2,7 +2,7 @@
 
 Wizard::Wizard(std::string name):Player(name)
 {
-    setHealth(40);
+    setHealth(70);
     setDamage(80);
     this->playerType = PlayerType::Wizard;
 }
@@ -17,7 +17,7 @@ Wizard::~Wizard()
 
 }
 
-void Wizard::Attack()
+/*void Wizard::Attack()
 {
     std::cout<<"I'm a Wizard, and I'm attacking"<<std::endl;
-}
+}*/

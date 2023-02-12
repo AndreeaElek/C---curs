@@ -10,7 +10,7 @@ public:
     Rogue(std::string name);
     Rogue();
     ~Rogue();
-    void Attack();
+    //void Attack();
 
 private:
 

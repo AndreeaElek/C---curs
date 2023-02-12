@@ -17,7 +17,7 @@ Rogue::~Rogue()
 
 }
 
-void Rogue::Attack()
+/*void Rogue::Attack()
 {
     std::cout<<"I'm a Rogue, and I'm attacking"<<std::endl;
-}
+}*/

@@ -8,6 +8,10 @@
 #include "Wizard.h"
 #include "Warrior.h"
 #include "Rogue.h"
+#include "Enemy.h"
+#include "Orc.h"
+#include "Goblin.h"
+#include "Troll.h"
 
 bool restartGame();
 
@@ -17,3 +21,6 @@ Player* setupPlayer();
 
 void roadsScene();
 bool chestScene();
+
+Enemy* generateRandomEnemy();
+bool battleScene(Player* player, Enemy* enemy);

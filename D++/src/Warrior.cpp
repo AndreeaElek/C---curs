@@ -17,7 +17,7 @@ Warrior::~Warrior()
 
 }
 
-void Warrior::Attack()
+/*void Warrior::Attack()
 {
     std::cout<<"I'm a Warrior and I'm attacking"<<std::endl;
-}
+}*/

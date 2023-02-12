@@ -26,7 +26,21 @@ int main(int argc, char const *argv[])
                 player->CreateChestItem();
             }
             player->CheckInventory();
-            //player->Attack();
+
+            std::cout << "Your healt before the battle: " << player->getHealth() << std::endl;
+            Enemy* enemy = generateRandomEnemy();
+            if(battleScene(player, enemy) == true)
+            {
+                std::cout<<"You won! \n";
+                std::cout<<"Your current health is: " << player->getHealth() << std::endl;
+                delete enemy;
+                std::cout << "Continuint game... \n";
+            }
+            else
+            {
+                std::cout<<"You lost! \n";
+                delete enemy;
+            }
 
             player->DeleteItems();
             delete player;
@@ -37,7 +51,7 @@ int main(int argc, char const *argv[])
         {
             std::cout << "You chose not to play" << std::endl; 
         }
-        std::cout<< "The game has ended" << std::endl;
+        std::cout<< "Game Over" << std::endl;
         restart=restartGame();
     }
     

@@ -57,6 +57,7 @@
         "string_view": "cpp",
         "numbers": "cpp",
         "sstream": "cpp",
-        "cinttypes": "cpp"
+        "cinttypes": "cpp",
+        "set": "cpp"
     }
 }

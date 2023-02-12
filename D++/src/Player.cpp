@@ -15,9 +15,10 @@ Player::~Player()
 
 }
 
-void Player::Attack()
+int Player::Attack()
 {
-    std::cout<<"Player is attacking"<<std::endl;
+    int playerAttackPower = this->getDamage() + this->getItemsAttackPower();
+    return playerAttackPower;
 }
 
 void Player::CheckInventory()
@@ -63,6 +64,19 @@ void Player::CreateChestItem()
             break;
         }
     }
+}
+
+int Player::getItemsAttackPower()
+{
+    int totalItemsDamage=0;
+    if(!(inventory.empty()))
+    {
+        for(auto& item : inventory)
+        {
+            totalItemsDamage += item->getAttackPower();
+        }
+    }
+    return totalItemsDamage;
 }
 
 void Player::DeleteItems()

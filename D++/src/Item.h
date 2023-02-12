@@ -16,6 +16,10 @@ public:
     {
         return itemName;
     }
+    int getAttackPower()
+    {
+        return this->attackPower;
+    }
 
 private:
     int attackPower, magicPower, defencePower;

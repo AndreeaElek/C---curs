@@ -10,7 +10,7 @@ public:
     Warrior(std::string name); 
     Warrior();
     ~Warrior();
-    void Attack();
+    //void Attack();
 
 
 private:

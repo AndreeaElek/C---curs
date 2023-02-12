@@ -143,9 +143,10 @@ Player* setupPlayer()
     
 }
 
+std::string roadChosen;
+
 void roadsScene()
 {
-    std::string roadChosen;
     int roadChosenValue;
 
     std::cout<<"You arrived at a crossroads. Where do you want to go?" << std::endl 
@@ -187,6 +188,7 @@ bool chestScene()
 {
     int chestAnswerValue;
     bool validAnswer = false, openChest;
+    std::cout << "You are heading to the " << roadChosen << ". \n";
     while(validAnswer==false)
     { 
         std::cout << "On the road, you find a chest. Do you open it?" << std::endl
@@ -217,3 +219,79 @@ bool chestScene()
     return openChest;
 }
 
+Enemy* generateRandomEnemy()
+{
+    EnemyType randomEnemyType = (EnemyType) (rand() % 3);
+    if(randomEnemyType == EnemyType::Orc)
+    {
+        Enemy* enemy = new Orc();
+        std::cout << "Orc enemy generated \n";
+        return enemy;
+    }
+    else if (randomEnemyType == EnemyType::Goblin)
+    {
+        Enemy* enemy = new Goblin();
+        std::cout << "Goblin enemy generated \n";
+        return enemy;
+    }
+    else 
+    {
+        Enemy* enemy = new Troll();
+        std::cout << "Troll enemy generated \n";
+        return enemy;
+    }
+}
+
+std::string generateFirstAttacker()
+{
+    enum Oponents{Player, Enemy};
+    Oponents randomfirstAttacker = (Oponents) (rand() % 2);
+    if(randomfirstAttacker == Oponents::Player)
+    {
+        return "Player";
+    }
+    else if (randomfirstAttacker == Oponents::Enemy)
+    {
+        return "Enemy";
+    }
+}
+
+bool battleScene(Player* player, Enemy* enemy)
+{
+    if(generateFirstAttacker() == "Player")
+    {
+        do 
+        {
+            enemy->setHP( enemy->getHP() - player->Attack() );
+            if (enemy->getHP() <= 0)
+            {
+                return true;
+            }
+
+            player->setHealth( player->getHealth() - enemy->getDamage() );
+            if(player->getHealth() <= 0)
+            {
+                return false;
+            }
+        }
+        while ( (player->getHealth() > 0) && (enemy->getHP() > 0) );
+    }
+    else
+    {
+        do 
+        {
+            player->setHealth( player->getHealth() - enemy->getDamage() );
+            if(player->getHealth() <= 0)
+            {
+                return false;
+            }
+
+            enemy->setHP( enemy->getHP() - player->Attack() );
+            if (enemy->getHP() <= 0)
+            {
+                return true;
+            }
+        }
+        while ( (player->getHealth() > 0) && (enemy->getHP() > 0) );
+    }
+}

@@ -10,7 +10,7 @@ public:
     Wizard(std::string name);
     Wizard();
     ~Wizard();
-    void Attack();
+    //void Attack();
 
 private:
 
