@@ -2,7 +2,7 @@
 
 Troll::Troll()
 {
-    setHP(80);
+    setHP(90);
     setDamage(60);
     this->enemyType = EnemyType::Troll;
 }

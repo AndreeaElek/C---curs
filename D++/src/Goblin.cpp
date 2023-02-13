@@ -3,7 +3,7 @@
 Goblin::Goblin()
 {
     setHP(60);
-    setDamage(40);
+    setDamage(50);
     this->enemyType = EnemyType::Goblin;
 }
 
