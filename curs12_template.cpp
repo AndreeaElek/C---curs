@@ -44,12 +44,44 @@ void swap(T & a, T & b)
     b = temp;
 } 
 
+
+//________________________________________________________________________________________________________________________________
+
+
+template <typename T>
+T greatestElement(T a, T b)
+{
+    T greater; 
+    if (a > b) 
+    {
+        greater = a;
+    }
+    else
+    {
+        greater = b;
+    }
+    return greater;
+}
+
+
+
+//________________________________________________________________________________________________________________________________
+
+
+
+
 int main() 
 {
     int c = 10;
     int d = 99;
     char e = 'c';
     char f = 'd';
+
+
+    std::cout << "Greater value between " << c << " and " << d << " : " << greatestElement(c,d) << std::endl;
+    std::cout << "Greater value between " << e << " and " << f << " : " << greatestElement(e,f) << std::endl;
+
+
 
     std::cout << "INAINTE DE SWAP" << std::endl;
     std::cout << c << std::endl;
@@ -67,6 +99,7 @@ int main()
     std::cout << f << std::endl;
     
     
+
 
     //TEMA:
     //Creati o fuctie template care sa returneze cel mai mare element dintrei doi parametrii (comparam valorille ascii)
